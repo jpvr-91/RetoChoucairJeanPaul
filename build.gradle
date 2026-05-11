@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'net.serenity-bdd.serenity-gradle-plugin' version '4.0.12'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Serenity BDD con Screenplay y Selenium integrado
+    implementation 'net.serenity-bdd:serenity-core:4.0.12'
+    implementation 'net.serenity-bdd:serenity-screenplay:4.0.12'
+    implementation 'net.serenity-bdd:serenity-screenplay-webdriver:4.0.12'
+    implementation 'net.serenity-bdd:serenity-cucumber:4.0.12'
+
+    // Selenium (ya viene transitivamente con serenity, pero puedes declararlo explicitamente)
+    implementation 'org.seleniumhq.selenium:selenium-java:4.18.1'
+
+    // Driver manager (opcional pero recomendado)
+    implementation 'io.github.bonigarcia:webdrivermanager:5.8.0'
+
+    // JUnit o Cucumber segun tu proyecto
+    testImplementation 'io.cucumber:cucumber-java:7.15.0'
+    testImplementation 'io.cucumber:cucumber-junit:7.15.0'
+    testImplementation 'junit:junit:4.13.2'
+}
